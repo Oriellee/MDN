@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>提取字符串</title>
+</head>
+<body>
+	<ul>
+		<li>MAN675847583748sjt567654;Manchester Piccadilly</li>
+		<li>GNF576746573fhdg4737dh4;Greenfield</li>
+		<li>LIV5hg65hd737456236dch46dg4;Liverpool Lime Street</li>
+		<li>SYB4f65hf75f736463;Stalybridge</li>
+		<li>HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield</li>
+	</ul>
+	<button>提取</button>
+	<script type="text/javascript">
+		var ul1 = document.querySelector("ul");
+		var li1 = document.querySelectorAll("li");
+		var btn = document.querySelector("button");
+
+		function bian(){
+			ul1.innerHTML = " ";
+			for(var i=0;i<li1.length;i++){
+				var a = li1[i].innerHTML;
+				var shou = a.slice(0,2);
+				var name = a.indexOf(";");
+				var last = a.slice(name+1);
+				var result = shou + ": " +last;
+				var listItem = document.createElement("li");
+				listItem.textContent = result;
+				ul1.appendChild(listItem);
+			}
+		}
+		btn.addEventListener("click",bian);
+	</script>
+</body>
+</html>
