@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>打印发票</title>
+</head>
+<body>
+<ul>
+	<li>0</li>
+</ul>
+<p>总价：0元</p>
+<button>打印</button>
+<script type="text/javascript">
+	var ul1 = document.querySelector("ul");
+	var li1 = document.querySelectorAll("li");
+	var btn = document.querySelector("button");
+	var p1 = document.querySelector("p");
+
+	var listItem = ['Underpants:6.99','Socks:5.99'
+                ,'T-shirt:14.99'
+                ,'Trousers:31.99'
+                ,'Shoes:23.99'];
+     var total = 0;
+    function bian(){
+    	ul1.innerHTML = " ";
+    	p1.innerHTML = " ";
+
+    	for(var i =0;i<listItem.length;i++){
+    		var a = listItem[i];
+    		var fen = a.split(":");
+    		var name = fen[0];
+    		var price = Number(fen[1]);
+    		total += price;
+
+    		var list1 = document.createElement("li");
+    		list1.textContent = name +" -- rmb "+price;
+    		ul1.appendChild(list1);
+    		btn.disabled = true;
+    	}
+    	p1.textContent = "总价： "+ total.toFixed(2);
+    }
+    btn.addEventListener("click",bian);
+
+</script>
+</body>
+</html>
