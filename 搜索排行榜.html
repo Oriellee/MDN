@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>搜索排行榜</title>
+</head>
+<body>
+	<label>
+		<input type="text" placeholder="请输入关键字">
+		<button>搜索</button>
+	</label>
+	<ul>
+		<li></li>
+	</ul>
+	<script type="text/javascript">
+		var input1 = document.querySelector("input");
+		var ul1 = document.querySelector("ul");
+		var li1 = document.querySelector("li");
+		var btn = document.querySelector("button");
+
+		ul1.innerHTML = "";
+		var list1 = [];
+		function bian(){
+			
+			if(input1.value !== ""){
+				list1.unshift(input1.value);
+				ul1.innerHTML = "";
+			for(var i=0;i<list1.length;i++){
+				var listItem = document.createElement("li");
+				listItem.textContent = list1[i];
+				ul1.appendChild(listItem);
+			}
+			if(list1.length>=5){
+				list1.pop();
+			}
+			}
+			input1.value = "";
+			input1.focus();
+		}
+		btn.addEventListener("click",bian);
+	</script>
+</body>
+</html>
