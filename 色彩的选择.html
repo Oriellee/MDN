@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>色彩的选择</title>
+</head>
+<body>
+<label>选择主题颜色</label>
+	<select>
+		<option value="白色">白色</option>
+		<option value="黑色">黑色</option>
+		<option value="米黄色">米黄色</option>
+		<option value="淡青色">淡青色</option>
+		<option value="珊瑚红">珊瑚红</option>
+		<option value="宝石绿">宝石绿</option>
+	</select>
+	<h2>这里显示你的主题!</h2>
+<script type="text/javascript">
+	var select = document.querySelector("select");
+	var html = document.querySelector("html");
+
+	function bian(bgc,col){
+		html.style.backgroundColor = bgc;
+		html.style.color = col;
+	}
+		select.onchange = function(){
+			var choice = select.value;
+			switch(choice){
+				case "白色":
+				bian("white","black");
+				break;
+				case "黑色":
+				bian("black","white");
+				break;
+				case "米黄色":
+				bian("Moccasin","black");
+				break;
+				case "珊瑚红":
+				bian("LightSalmon","black");
+				break;
+				case "淡青色":
+				bian("LightCyan","black");
+				break;
+				case "宝石绿":
+				bian("MediumTurquoise","black");
+				break;
+			}
+		}
+
+</script>
+</body>
+</html>

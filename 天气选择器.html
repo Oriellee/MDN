@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>天气选择器</title>
+</head>
+<body>
+<label>今天的天气是：</label>
+<select>
+	<option>请选择</option>
+	<option value="晴天">晴天</option>
+	<option value="小雨">小雨</option>
+	<option value="中雨">中雨</option>
+	<option value="暴雨">暴雨</option>
+	<option value="冰雹">冰雹</option>
+</select>
+<p>hahah</p>
+<script type="text/javascript">
+	var select = document.querySelector("select");
+	var p1 = document.querySelector("p");
+
+	select.addEventListener("change",bian);
+
+	function bian(){
+		var choice = select.value;
+		switch(choice){
+			case "晴天":
+			p1.textContent = "还是晴天出太阳的好啊，不过太晒了！";
+			break;
+			case "小雨":
+			p1.textContent = "这就有点糟糕了！下的雨比较大了！";
+			break;
+			case "中雨":
+			p1.textContent = "这就有点糟糕了！下的雨比较大了！";
+			break;
+			case "暴雨":
+			p1.textContent = "暴雨啦！收衣服啦！！！";
+			break;
+			case "冰雹":
+			p1.textContent = "休息吧休息吧。";
+			break;
+			default:
+			pi.textContent = "";
+		}
+	}
+</script>
+</body>
+</html>
