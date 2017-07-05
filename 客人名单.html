@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>客人名单</title>
+</head>
+<body>
+	<p class="allow"></p>
+	<p class="refused"></p>
+	<button>编辑</button>
+
+	<script type="text/javascript">
+		var allow = document.querySelector(".allow");
+		var refused = document.querySelector(".refused");
+		var btn = document.querySelector("button");
+
+		var people = ["张三","李四","王五","赵六","李葱","小于","哈哈"];
+		btn.onclick = function(){
+			var i = 0;
+			do{
+				if(people[i] === "张三"||people[i] === "李四"){
+					refused.textContent += people[i]+",";
+				}
+				else{
+					allow.textContent += people[i]+",";
+				}
+				i++;
+			}
+			while(i<people.length);
+
+			allow.textContent = "allow:  "+allow.textContent.slice(0,allow.textContent.length-1)+".";
+			refused.textContent = "refused:  "+refused.textContent.slice(0,refused.textContent.length-1)+".";}
+	</script>
+</body>
+</html>
