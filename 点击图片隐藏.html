@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>点击图片隐藏</title>
+	<style type="text/css">
+	body{
+		padding: 20px;
+	}
+		img{
+			width: 50px;
+			display: block;
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+<button>点我点我！</button>
+<img src="chat.png">
+<script type="text/javascript">
+	var btn = document.querySelector("button");
+	var img = document.querySelector("img");
+
+	img.style.visibility = "hidden";
+	btn.onclick = function(){
+		img.style.visibility = "visible";
+	}
+	img.onclick = function(){
+		img.style.visibility = "hidden";
+	}
+</script>
+</body>
+</html>

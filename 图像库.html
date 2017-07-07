@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图像库</title>
+	<style type="text/css">
+	div{
+		/*border: 1px solid red;*/
+		background-color: black;
+	}
+		.full-img{
+			margin: 40px auto 0px;
+			width: 600px;
+			height: 400px;
+		}
+		.displayed-img{
+			width: 600px;
+			height: 400px;
+			position: absolute;
+		}
+		.overlay{
+			width: 600px;
+			height: 400px;
+			position: absolute;
+			background-color: rgba(0,0,0,0);
+		}
+		.dark{
+			position: absolute;
+			margin: 20px;
+		}
+		.thumb-bar{
+			width: 600px;
+			height: 150px;
+			margin: 0px auto;
+			padding: 0px;
+		}
+		.thumb-bar img{
+			width: 146px;
+			height: 100%;
+			margin: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="full-img">
+	  <img class="displayed-img" src="4.jpg">
+	  <div class="overlay"></div>
+	  <button class="dark">Darken</button>
+	</div>
+
+	<div class="thumb-bar">
+		<img src="1.jpg">
+		<img src="2.jpg">
+		<img src="3.jpg">
+		<img src="4.jpg">
+	</div>
+</body>
+</html>
