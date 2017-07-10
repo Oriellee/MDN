@@ -27,15 +27,22 @@
 		.dark{
 			position: absolute;
 			margin: 20px;
+			background-color: rgba(0,0,0,0.2);
+		}
+		.light{
+			position: absolute;
+			margin: 20px;
+			background-color: rgba(0,0,0,0.2);
 		}
 		.thumb-bar{
 			width: 600px;
 			height: 150px;
 			margin: 0px auto;
 			padding: 0px;
+			font-size: 0;
 		}
 		.thumb-bar img{
-			width: 146px;
+			width: 25%;
 			height: 100%;
 			margin: 0px;
 		}
@@ -54,5 +61,35 @@
 		<img src="3.jpg">
 		<img src="4.jpg">
 	</div>
+
+	<script type="text/javascript">
+		var btn = document.querySelector(".dark");
+		var overlay = document.querySelector(".overlay");
+		var displayedImg = document.querySelector(".displayed-img");
+		var thumbBar =document.querySelectorAll(".thumb-bar img");
+		
+		btn.onclick = function(){
+			var btnClsaa = btn.getAttribute("class");
+			if(btnClsaa === "dark"){
+				btn.setAttribute("class","light");
+				btn.tetContent = "Light";
+				overlay.style.backgroundColor = "rgba(0,0,0,0.3)";
+			}
+			else{
+				btn.setAttribute("class","dark");
+				btn.tetContent = "Darken";
+				overlay.style.backgroundColor = "rgba(0,0,0,0)";
+			}
+		}
+
+		for(var i=0;i<=thumbBar.length;i++){
+			var newImage = thumbBar[i];
+			newImage.setAttribute("src",i+1+".jpg");
+			newImage.onclick = function(e){
+				var imgSrc = e.target.getAttribute("src");
+				displayedImg.setAttribute("src",imgSrc);
+			}
+		}
+	</script>
 </body>
 </html>
