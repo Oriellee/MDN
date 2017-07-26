@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>练习</title>
+</head>
+<body>
+ <button>显示</button>
+      <header>
+
+      </header>
+
+      <section>
+
+      </section>
+      <script type="text/javascript">
+      	var btn = document.querySelector("button");
+      	var header = document.querySelector("header");
+      	var section = document.querySelector("section");
+
+      	var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+      	var request = new XMLHttpRequest();
+      	request.open("GET",requestURL);
+      	request.responseType = 'json';
+      	request.send();
+      	btn.onclick = function(){
+      		var superheros = request.response;
+      		tian(superheros);
+      		show(superheros);
+      		btn.disabled = true;
+      	}
+      	function tian(jsonObj){
+      		var h1 = document.createElement("h1");
+      		h1.textContent = jsonObj['squadName'];
+      		header.appendChild(h1);
+
+      		var p1 = document.createElement("p");
+      		p1.textContent = " 网址是："+jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+      		header.appendChild
+      	}
+      	function show(jsonObj){
+      		var heros = jsonObj['members'];
+      		for(var i=0;i<heros.length;i++){
+      			var myArticle = document.createElement('article');
+      			var myH2 = document.createElement('h2');
+    var myPara1 = document.createElement('p');
+    var myPara2 = document.createElement('p');
+    var myPara3 = document.createElement('p');
+    var myList = document.createElement('ul');
+
+    myH2.textContent = heros[i].name;
+    myPara1.textContent = 'Secret identity: ' + heros[i].secretIdentity;
+    myPara2.textContent = 'Age: ' + heros[i].age;
+    myPara3.textContent = 'Superpowers:';
+        
+    var superPowers = heros[i].powers;
+    for(j = 0; j < superPowers.length; j++) {
+      var listItem = document.createElement('li');
+      listItem.textContent = superPowers[j];
+      myList.appendChild(listItem);
+    }
+
+    myArticle.appendChild(myH2);
+    myArticle.appendChild(myPara1);
+    myArticle.appendChild(myPara2);
+    myArticle.appendChild(myPara3);
+    myArticle.appendChild(myList);
+
+    section.appendChild(myArticle);
+  }
+}
+      </script>
+</body>
+</html>
