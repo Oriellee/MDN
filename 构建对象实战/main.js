@@ -23,7 +23,7 @@ function Ball() {
 Ball.prototype.draw = function() {
   ctx.beginPath();
   ctx.fillStyle = this.color;
-  ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+  ctx.arc(this.x, this.y, this.size,0,2*Math.PI);
   ctx.fill();
 }
 Ball.prototype.update = function(){
